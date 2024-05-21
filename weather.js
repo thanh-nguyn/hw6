@@ -95,6 +95,16 @@ document.addEventListener('DOMContentLoaded', () => {
         th.textContent = header;
         headerRow.appendChild(th);
     });
+
+    const iconURLs = {
+        '01': 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Weather-few-clouds.svg/2048px-Weather-few-clouds.svg.png',
+        '02': 'https://cdn1.iconfinder.com/data/icons/weather-forecast-meteorology-color-1/128/weather-rain-light-512.png',
+        '03': 'https://cdn-icons-png.flaticon.com/512/3222/3222800.png',
+        '04': 'https://i.pngimg.me/thumb/f/720/freesvgorg18955.jpg',
+        '05': 'https://cdn-icons-png.flaticon.com/512/414/414927.png',
+        '06': 'https://cdn1.iconfinder.com/data/icons/weather-flat-26/64/weather_cloud_forecast_thunder_storm-512.png',
+        '07': 'https://cdn1.iconfinder.com/data/icons/weather-2-colored/512/heavy_snowfall-512.png',
+    };
  
     for (let i = 0; i < 5; i++) {
         const row = table.insertRow();
@@ -103,12 +113,27 @@ document.addEventListener('DOMContentLoaded', () => {
         const lowCell = row.insertCell();
         const outlookCell = row.insertCell();
         const rainCell = row.insertCell();
+
+        console.log(new Date(cityData.list[i * 8].dt_txt).toLocaleDateString('en-US', { weekday: 'short' }))
+        console.log(new Date)
+
+        let dailyHigh = -Infinity;
+        let dailyLow = Infinity;
+        let pop = 0;
+        
+        for (let j = i * 8; j < (i + 1) * 8; j++) {
+            const temp = cityData.list[j].main.temp;
+            dailyHigh = Math.max(dailyHigh, temp);
+            dailyLow = Math.min(dailyLow, temp);
+            pop += cityData.list[j].pop;
+        }
+        pop /= 8 
  
         dayCell.textContent = new Date(cityData.list[i * 8].dt_txt).toLocaleDateString('en-US', { weekday: 'short' });
-        highCell.textContent = `${Math.round(cityData.list[i * 8].main.temp_max)}°`;
-        lowCell.textContent = `${Math.round(cityData.list[i * 8].main.temp_min)}°`;
-        outlookCell.innerHTML = `<img src="images/${cityData.list[i * 8].weather[0].icon}.png" alt="${cityData.list[i * 8].weather[0].description}">`;
-        rainCell.textContent = `${cityData.list[i * 8].pop * 100}%`;
+        highCell.textContent = `${Math.round(dailyHigh)}°`;
+        lowCell.textContent = `${Math.round(dailyLow)}°`;
+        outlookCell.innerHTML = `<img src="${iconURLs}" alt="${cityData.list[i * 8].weather[0].description}" style="width:50px;height:50px;">`;
+        rainCell.textContent = `${Math.round(pop * 100)}%`;
     }
  
     const cityHeader = document.createElement('h3');
