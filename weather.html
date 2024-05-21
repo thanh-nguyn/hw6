@@ -1,52 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Weather Comparison</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='weather.css'>
-    <script src='weather.js'></script>
+   <meta charset='utf-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <title>Weather Comparison</title>
+   <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <link rel='stylesheet' type='text/css' media='screen' href='weather.css'>
 </head>
 <body>
-    <div class="container">
-        <h1>Weather Comparison</h1>
-        <form id="weather-form">
-            <div class="location">
-                <label for="city1">Location 1: City:</label>
-                <input type="text" id="city1" name="city1">
-                <span id="error-city1" class="error-message"></span>
-                <label for="state1">State:</label>
-                <select id="state1" name="state1">
-                    <!-- Options will be populated by JavaScript -->
-                </select>
-            </div>
-            <div class="location">
-                <label for="city2">Location 2: City:</label>
-                <input type="text" id="city2" name="city2">
-                <span id="error-city2" class="error-message"></span>
-                <label for="state2">State:</label>
-                <select id="state2" name="state2">
-                    <!-- Options will be populated by JavaScript -->
-                </select>
-            </div>
-            <div class="units">
-                <label>
-                    <input type="radio" name="units" value="imperial"> Fahrenheit
-                </label>
-                <label>
-                    <input type="radio" name="units" value="metric"> Celsius
-                </label>
-            </div>
-            <button onclick="fetchWeather()">Compare</button>
-        </form>
-        <div id="forecast">
-            <!-- Weather forecast tables will be inserted here -->
-        </div>
-    </div>
-    <footer>
-        <p>By Thanh Nguyen 5/20/2024</p>
-    </footer>
-    
+   <div class="container">
+       <h1>Weather Comparison</h1>
+       <form id="weather-form">
+           <div class="location">
+               <label for="city1">Location 1: City:</label>
+               <input type="text" id="city1" name="city1">
+               <span id="error-city1" class="error-message"></span>
+               <label for="state1">State:</label>
+               <select id="state1" name="state1">
+                   <!-- Options will be populated by JavaScript -->
+               </select>
+           </div>
+           <div class="location">
+               <label for="city2">Location 2: City:</label>
+               <input type="text" id="city2" name="city2">
+               <span id="error-city2" class="error-message"></span>
+               <label for="state2">State:</label>
+               <select id="state2" name="state2">
+                   <!-- Options will be populated by JavaScript -->
+               </select>
+           </div>
+           <div class="units">
+               <label>
+                   <input type="radio" name="units" value="imperial" checked> Fahrenheit
+               </label>
+               <label>
+                   <input type="radio" name="units" value="metric"> Celsius
+               </label>
+           </div>
+           <button type="button" id="compare-button">Compare</button>
+       </form>
+       <div id="forecast">
+           <!-- Weather forecast tables will be inserted here -->
+       </div>
+   </div>
+   <footer>
+       <p>By Thanh Nguyen 5/20/2024</p>
+   </footer>
+   <script src='weather.js'></script>
 </body>
 </html>

@@ -1,38 +1,41 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-}
-
-.container {
+ }
+ 
+ .container {
     width: 80%;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+ }
+ 
+ h1 {
     text-align: center;
-}
-
-.location, .units {
+    margin-bottom: 20px;
+ }
+ 
+ .location, .units {
     margin: 20px 0;
-}
-
-label {
+ }
+ 
+ label {
     margin-right: 10px;
-}
-
-input[type="text"] {
+ }
+ 
+ input[type="text"] {
     border: 1px solid #ccc;
     padding: 5px;
-}
-
-select {
+    margin-right: 10px;
+ }
+ 
+ select {
     padding: 5px;
-}
-
-button {
+    margin-right: 10px;
+ }
+ 
+ button {
     display: block;
     margin: 0 auto;
     padding: 10px 20px;
@@ -40,40 +43,41 @@ button {
     color: #fff;
     border: none;
     cursor: pointer;
-}
-
-button:hover {
+ }
+ 
+ button:hover {
     background-color: #0056b3;
-}
-
-#forecast {
+ }
+ 
+ #forecast {
     margin-top: 20px;
-}
-
-table {
+ }
+ 
+ table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-}
-
-table, th, td {
+ }
+ 
+ table, th, td {
     border: 1px solid #ddd;
-}
-
-th, td {
+ }
+ 
+ th, td {
     padding: 10px;
     text-align: center;
-}
-
-footer {
+ }
+ 
+ footer {
     text-align: center;
     margin-top: 20px;
     font-size: 0.9em;
     color: #666;
-}
-
-.error-message {
+ }
+ 
+ .error-message {
     color: red;
     font-size: 0.9em;
     margin-left: 10px;
-}
+ }
+ 
